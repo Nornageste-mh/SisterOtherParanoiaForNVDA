@@ -1,0 +1,13 @@
+# 构建与运行产物
+dist/
+game-mod/thirdparty/
+game-mod/SopAccess/bin/
+game-mod/SopAccess/obj/
+sop-analysis/
+
+# Python
+__pycache__/
+*.pyc
+
+# 日志与临时文件
+*.log
