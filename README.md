@@ -24,8 +24,17 @@
 
 ## 安装（仅限正版玩家）
 
+**自动部署（推荐）**：在 PowerShell 中运行 `.\deploy.ps1`，脚本会自动定位 Steam 游戏目录、
+下载 BepInEx 运行时、编译并部署游戏插件、复制 NVDA 插件。也可手动指定目录：
+
+```powershell
+.\deploy.ps1 -GameDir "F:\Steam\steamapps\common\Sister Other Paranoia"
+```
+
+手动安装步骤：
+
 1. 游戏侧：将 `winhttp.dll`、`doorstop_config.ini`、`.doorstop_version`、`BepInEx\` 复制到游戏根目录，
-   并把 `SopAccess.dll` 放入 `BepInEx\plugins\`（也可运行 `deploy.ps1` 自动部署）
+   并把 `SopAccess.dll` 放入 `BepInEx\plugins\`
 2. NVDA 侧：安装 `sopAccess-*.nvda-addon`（用 `nvda-addon/build_addon.py` 打包生成），重启 NVDA
 3. 先启动 NVDA，再启动游戏
 
@@ -53,4 +62,5 @@
 ## 构建
 
 - 游戏插件：`dotnet build game-mod/SopAccess/SopAccess.csproj -c Release`
-- NVDA 插件：`python nvda-addon/build_addon.py`
+  （csproj 默认引用了作者本机的游戏程序集路径，其他机器请用 `-p:GameManaged="<游戏根目录>\SisterOtherParanoia_Data\Managed"` 覆盖；`deploy.ps1` 会自动处理）
+- NVDA 插件：`python nvda-addon/build_addon.py`（产物输出到仓库根目录 `dist/`）
