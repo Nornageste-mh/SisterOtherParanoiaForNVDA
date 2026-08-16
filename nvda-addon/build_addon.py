@@ -4,8 +4,9 @@ import os
 import sys
 import zipfile
 
-SRC = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sopAccess")
-OUT_DIR = r"D:\Harness工作区\sop-nvda\dist"
+ADDON_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # nvda-addon/
+SRC = os.path.join(ADDON_ROOT, "sopAccess")
+OUT_DIR = os.path.join(os.path.dirname(ADDON_ROOT), "dist")  # 仓库根/dist
 
 def _version():
     with open(os.path.join(SRC, "manifest.ini"), "r", encoding="utf-8") as f:
