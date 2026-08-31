@@ -1,4 +1,4 @@
-# sop-nvda
+# SisterOtherParanoiaForNVDA
 
 本仓库是**专门针对 Steam 游戏《妹妹、他人、妄想症》（Sister Other Paranoia）** 的 NVDA 辅助插件
 （游戏内 BepInEx 插件 + NVDA 全局插件）。
